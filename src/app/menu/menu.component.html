@@ -1,1 +1,130 @@
-<p>menu works!</p>
+
+<mat-accordion class="example-headers-align" multi>
+  <mat-expansion-panel *ngIf="platillos.Desayuno">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Desayuno
+      </mat-panel-title>
+
+    </mat-expansion-panel-header>
+
+    <mat-grid-list cols="3" rowHeight="2:1">
+      <mat-grid-tile *ngFor="let platillo of platillos.Desayuno">
+        <mat-card class="example-card">
+          <mat-card-subtitle>Platillo</mat-card-subtitle>
+          <mat-card-title>{{platillo.nombre}}</mat-card-title>
+          <mat-card-content>
+            <p><b>Ingredientes:</b> {{platillo.ingredientes}}</p>
+            <p><b>Peso:</b> {{platillo.peso}}</p>
+            <p><b>Calorías:</b> {{platillo.calorias}}</p>
+            <p><b>Precio:</b> {{platillo.precio}}</p>
+          </mat-card-content>
+          <mat-divider inset></mat-divider>
+          <mat-card-actions>
+            <button mat-raised-button color="primary"  (click)="SelectToShoppingCart(platillo)"  >SELECCIONAR</button>
+
+          </mat-card-actions>
+          <mat-card-footer>
+
+          </mat-card-footer>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-expansion-panel>
+  <mat-expansion-panel *ngIf="platillos.Comida">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Comida
+      </mat-panel-title>
+
+    </mat-expansion-panel-header>
+
+    <mat-grid-list cols="3" rowHeight="2:1" >
+      <mat-grid-tile *ngFor="let platillo of platillos.Comida">
+        <mat-card class="example-card">
+          <mat-card-subtitle>Platillo</mat-card-subtitle>
+          <mat-card-title>{{platillo.nombre}}</mat-card-title>
+          <mat-card-content>
+            <p><b>Ingredientes:</b> {{platillo.ingredientes}}</p>
+            <p><b>Peso:</b> {{platillo.peso}}</p>
+            <p><b>Calorías:</b> {{platillo.calorias}}</p>
+            <p><b>Precio:</b> {{platillo.precio}}</p>
+          </mat-card-content>
+          <mat-divider inset></mat-divider>
+          <mat-card-actions>
+            <button mat-raised-button color="primary"  (click)="SelectToShoppingCart(platillo)">SELECCIONAR</button>
+
+          </mat-card-actions>
+          <mat-card-footer>
+
+          </mat-card-footer>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-expansion-panel>
+  <mat-expansion-panel *ngIf="platillos.Cena">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Cena
+      </mat-panel-title>
+
+    </mat-expansion-panel-header>
+
+    <mat-grid-list cols="3" rowHeight="2:1" >
+      <mat-grid-tile *ngFor="let platillo of platillos.Cena">
+        <mat-card class="example-card">
+          <mat-card-subtitle>Platillo</mat-card-subtitle>
+          <mat-card-title>{{platillo.nombre}}</mat-card-title>
+          <mat-card-content>
+            <p><b>Ingredientes:</b> {{platillo.ingredientes}}</p>
+            <p><b>Peso:</b> {{platillo.peso}}</p>
+            <p><b>Calorías:</b> {{platillo.calorias}}</p>
+            <p><b>Precio:</b> {{platillo.precio}}</p>
+          </mat-card-content>
+          <mat-divider inset></mat-divider>
+          <mat-card-actions>
+            <button mat-raised-button color="primary"  (click)="SelectToShoppingCart(platillo)">SELECCIONAR</button>
+
+          </mat-card-actions>
+          <mat-card-footer>
+
+          </mat-card-footer>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-expansion-panel>
+  <mat-expansion-panel *ngIf="platillos.Bebidas">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Bebidas
+      </mat-panel-title>
+
+    </mat-expansion-panel-header>
+
+    <mat-grid-list cols="3" rowHeight="2:1" >
+      <mat-grid-tile *ngFor="let platillo of platillos.Bebidas">
+        <mat-card>
+          <mat-card-subtitle>Platillo</mat-card-subtitle>
+          <mat-card-title>{{platillo.nombre}}</mat-card-title>
+          <mat-card-content>
+            <p><b>Ingredientes:</b> {{platillo.ingredientes}}</p>
+            <p><b>Peso:</b> {{platillo.peso}}</p>
+            <p><b>Calorías:</b> {{platillo.calorias}}</p>
+            <p><b>Precio:</b> {{platillo.precio}}</p>
+          </mat-card-content>
+          <mat-divider inset></mat-divider>
+          <mat-card-actions>
+            <button mat-raised-button color="primary"  (click)="SelectToShoppingCart(platillo)">SELECCIONAR</button>
+
+          </mat-card-actions>
+          <mat-card-footer>
+
+          </mat-card-footer>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<hr/>
+<app-shopping-cart [shoppingCart]="shoppingCart"></app-shopping-cart>
